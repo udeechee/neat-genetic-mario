@@ -1008,7 +1008,7 @@ function onExit()
 	forms.destroy(form)
 end
 
--- writeFile(config.PoolDir.."temp.pool")
+writeFile(config.PoolDir.."temp.pool")
 
 event.onexit(onExit)
 
