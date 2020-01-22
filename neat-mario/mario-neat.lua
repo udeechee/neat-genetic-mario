@@ -639,8 +639,13 @@ function initializePool()
 	initializeRun()
 end
 
+function pickRandomSaveState()
+	local saveStateChoosen = math.random(#config.State)
+	return config.PoolDir .. config.State[saveStateChoosen]
+end
+
 function initializeRun()
-	savestate.load(config.NeatConfig.Filename);
+	savestate.load(pickRandomSaveState());
 	if config.StartPowerup ~= NIL then
 		game.writePowerup(config.StartPowerup)
 	end
@@ -852,7 +857,6 @@ function displayGenome(genome)
 end
 
 function writeFile(filename)
-		print(filename)
         local file = io.open(filename, "w")
         file:write(pool.generation .. "\n")
         file:write(pool.maxFitness .. "\n")
@@ -976,7 +980,7 @@ function flipState()
 end
  
 function loadPool()
-	filename = forms.openfile("DP1.state.pool",config.PoolDir) 
+	filename = forms.openfile("SS.state.pool",config.PoolDir) 
 	--local filename = forms.gettext(saveLoadFile)
 	forms.settext(saveLoadFile, filename)
 	loadFile(filename)
