@@ -1028,10 +1028,11 @@ PowerUpLabel = forms.label(form, "PowerUp: " .. "", 230, 80, 110, 14)
 
 startButton = forms.button(form, "Start", flipState, 155, 102)
 
-restartButton = forms.button(form, "Restart", initializePool, 155, 102)
+restartButton = forms.button(form, "Restart", initializePool, 305, 102)
 saveButton = forms.button(form, "Save", savePool, 5, 102)
 loadButton = forms.button(form, "Load", loadPool, 80, 102)
 playTopButton = forms.button(form, "Play Top", playTop, 230, 102)
+showNetwork = forms.checkbox(form, "Show Map", 380, 102)
 
 saveLoadFile = forms.textbox(form, config.NeatConfig.Filename .. ".pool", 170, 25, nil, 5, 148)
 saveLoadLabel = forms.label(form, "Save/Load:", 5, 129)
@@ -1044,7 +1045,9 @@ while true do
 	local species = pool.species[pool.currentSpecies]
 	local genome = species.genomes[pool.currentGenome]
 	
-	displayGenome(genome)
+	if forms.ischecked(showNetwork) then
+			displayGenome(genome)
+	end
 	
 	if pool.currentFrame%5 == 0 then
 		evaluateCurrent()
