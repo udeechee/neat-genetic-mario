@@ -852,6 +852,7 @@ function displayGenome(genome)
 end
 
 function writeFile(filename)
+		print(filename)
         local file = io.open(filename, "w")
         file:write(pool.generation .. "\n")
         file:write(pool.maxFitness .. "\n")
@@ -1007,7 +1008,7 @@ function onExit()
 	forms.destroy(form)
 end
 
-writeFile(config.PoolDir.."temp.pool")
+-- writeFile(config.PoolDir.."temp.pool")
 
 event.onexit(onExit)
 

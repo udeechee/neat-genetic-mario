@@ -6,8 +6,8 @@ local _M = {}
 --_M.BizhawkDir = "C:/Users/mmill/Downloads/BizHawk-2.2/"
 _M.BizhawkDir = "/C/Users/Owner/Desktop/ROMS/ml_and_tas/BizHawk-2.3.3/"
 
-_M.StateDir = _M.BizhawkDir .. "Lua/SNES/neat-mario/state/"
-_M.PoolDir = _M.BizhawkDir .. "Lua/SNES/neat-mario/pool/"
+_M.StateDir = _M.BizhawkDir .. "Lua/SNES/neat-genetic-mario/neat-mario/state/"
+_M.PoolDir = _M.BizhawkDir .. "Lua/SNES/neat-genetic-mario/neat-mario/pool/"
 
 --[[
 	At the moment the first in list will get loaded.
